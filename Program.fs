@@ -14,14 +14,20 @@ let polarToCartesianApprox (r,theta) n =
     let term i number =
         let factorial_num = factorial number
         (theta ** (float number)) * (-1.0 ** float i) / float factorial_num
-    let sin = 
-        let coeffs = [1..2..(n*2)-1]
-        List.mapi term coeffs
-        |> List.reduce (+)
+    let sin =  
+        if n = 0
+        then 0.0
+        else 
+            let coeffs = [1..2..n]
+            List.mapi term coeffs
+            |> List.reduce (+)
     let cos =
-        let coeffs = [0..2..(n-1)*2]
-        List.mapi term coeffs
-        |> List.reduce (+)
+        if n = 0
+        then 1.0
+        else 
+            let coeffs = [0..2..n]
+            List.mapi term coeffs
+            |> List.reduce (+)
     (r * cos, r * sin)
     // failwithf "Tick1 not yet implemented" // replace this line with your top-level implementation
 
