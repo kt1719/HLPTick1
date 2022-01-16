@@ -1,0 +1,12 @@
+
+.ionide/symbolCache.db
+
+a.fsx
+
+bin/Debug/net5.0/cs/FSharp.Core.resources.dll
+
+*.dll
+
+*.json
+
+*.cache
