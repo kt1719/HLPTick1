@@ -81,4 +81,5 @@ let testBench testData testFun =
 [<EntryPoint>]
 let main argv =
     testBench testBenchData polarToCartesianApprox
+    System.Console.ReadKey() |> ignore
     0 // return an integer exit code
